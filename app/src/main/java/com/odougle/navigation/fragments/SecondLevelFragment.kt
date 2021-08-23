@@ -1,10 +1,39 @@
 package com.odougle.navigation.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.odougle.navigation.databinding.FragmentSecondLevelBinding
 
 class SecondLevelFragment : Fragment() {
 
+    private var _binding : FragmentSecondLevelBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentSecondLevelBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        arguments?.getString(EXTRA_TEXT)?.let {
+            binding.textView.text = it
+        }
+        arguments?.getInt(EXTRA_TEXT_COLOR)?.let {
+            binding.textView.setTextColor(it)
+        }
+        arguments?.getInt(EXTRA_BG_COLOR)?.let {
+            view.setBackgroundColor(it)
+        }
+
+    }
 
     companion object{
         private const val EXTRA_TEXT = "texto"
