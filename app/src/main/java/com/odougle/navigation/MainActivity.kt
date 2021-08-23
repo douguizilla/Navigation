@@ -12,17 +12,16 @@ class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy{ ActivityMainBinding.inflate(layoutInflater)   }
     private val toolbar by lazy{ ToolbarBinding.inflate(layoutInflater) }
-    private val drawerLayout by lazy{ binding.drawerLayout }
 
     private val drawerToogle : ActionBarDrawerToggle by lazy {
-        ActionBarDrawerToggle(this, drawerLayout, toolbar.toolbar, R.string.app_name, R.string.app_name)
+        ActionBarDrawerToggle(this, binding.drawerLayout, toolbar.toolbar, R.string.app_name, R.string.app_name)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setSupportActionBar(toolbar.toolbar)
-        drawerLayout.addDrawerListener(drawerToogle)
+        binding.drawerLayout.addDrawerListener(drawerToogle)
         drawerToogle.syncState()
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
             selectMenuOption(menuItem)
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             android.R.id.home ->{
-                drawerLayout.openDrawer(GravityCompat.START)
+                binding.drawerLayout.openDrawer(GravityCompat.START)
                 return true
             }
         }
@@ -45,6 +44,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun selectMenuOption(menuItem: MenuItem) {
         menuItem.isChecked = true
-        drawerLayout.closeDrawers()
+        binding.drawerLayout.closeDrawers()
     }
 }
