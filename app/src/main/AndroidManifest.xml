@@ -11,8 +11,11 @@
         android:theme="@style/MainTheme">
         <activity android:name=".PagerActivity"></activity>
         <activity android:name=".BottomActivity" />
-        <activity android:name=".TabsActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TabsActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/MainTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
