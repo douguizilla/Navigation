@@ -11,8 +11,6 @@
         android:theme="@style/MainTheme">
         <activity android:name=".PagerActivity"></activity>
         <activity android:name=".BottomActivity" />
-        <activity android:name=".TabsActivity"
-            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/MainTheme">
@@ -22,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TabsActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
