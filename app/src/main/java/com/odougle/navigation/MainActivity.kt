@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.odougle.navigation.databinding.ActivityMainBinding
 import com.odougle.navigation.databinding.ToolbarBinding
+import com.odougle.navigation.fragments.FirstLevelFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,5 +46,13 @@ class MainActivity : AppCompatActivity() {
     private fun selectMenuOption(menuItem: MenuItem) {
         menuItem.isChecked = true
         binding.drawerLayout.closeDrawers()
+        val title = menuItem.title.toString()
+        if(supportFragmentManager.findFragmentByTag(title) == null){
+            val firstLevelFragment = FirstLevelFragment.newInstance(title)
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.content, firstLevelFragment, title)
+                .commit()
+        }
     }
 }
