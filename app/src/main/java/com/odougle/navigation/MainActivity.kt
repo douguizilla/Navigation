@@ -1,12 +1,10 @@
 package com.odougle.navigation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import com.odougle.navigation.databinding.ActivityMainBinding
 import com.odougle.navigation.databinding.ToolbarBinding
 
