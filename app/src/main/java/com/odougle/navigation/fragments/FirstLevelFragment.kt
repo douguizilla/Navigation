@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.odougle.navigation.BottomActivity
+import com.odougle.navigation.PagerActivity
 import com.odougle.navigation.R
+import com.odougle.navigation.TabsActivity
 import com.odougle.navigation.databinding.FragmentFirstLevelBinding
 
 class FirstLevelFragment : Fragment() {
@@ -19,9 +22,9 @@ class FirstLevelFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        actions.put(getString(R.string.option_tab),TabsActivity::class.java)
-        actions.put(getString(R.string.option_bottom),BottomActivity::class.java)
-        actions.put(getString(R.string.option_pager),PagerActivity::class.java)
+        actions.put(getString(R.string.option_tab), TabsActivity::class.java)
+        actions.put(getString(R.string.option_bottom), BottomActivity::class.java)
+        actions.put(getString(R.string.option_pager), PagerActivity::class.java)
     }
 
     override fun onCreateView(
