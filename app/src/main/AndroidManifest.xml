@@ -10,9 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/MainTheme">
         <activity android:name=".PagerActivity"></activity>
-        <activity android:name=".BottomActivity" />
         <activity android:name=".MainActivity"
-            android:launchMode="singleTop"
             android:theme="@style/MainTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BottomActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".TabsActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"/>
     </application>
 
